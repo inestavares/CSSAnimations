@@ -1,0 +1,247 @@
+@import '../bower_components/normalize.css/normalize.css';
+
+
+.more {
+    position:absolute;
+    top:10px;
+    right:10px;
+    a {
+        color: #6BD253;
+        text-decoration:none;
+        font-size:12px;
+    }
+}
+
+// =========== MAIN CSS =========== 
+
+body, html {
+    width:100%;
+    height:100%;
+    color:white;
+    font-size:100%;
+    font-family:Helvetica, sans-serif;
+    text-shadow:0 1px 3px rgba(0,0,0,0.5);
+}
+
+#wrapper {
+    width:100%;
+    height:100%;
+    background: rgba(0, 0, 0, 0.9);
+    -webkit-box-shadow: inset 0px 0px 171px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: inset 0px 0px 171px 0px rgba(0,0,0,0.75);
+    box-shadow: inset 0px 0px 171px 0px rgba(0,0,0,0.75);
+    display:table;
+    vertical-align:middle;
+}
+
+#text-container {
+    display:table-cell;
+    vertical-align: middle;
+    text-align:center;
+    width:50%;
+    margin:0 auto;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family:baskerville, serif;  
+}
+
+
+h4 {
+    font-size:1.4em;
+    font-weight:100;
+    text-transform: lowercase;
+    font-style: italic;
+    color:#FEFFEF;
+    margin:0;
+    
+}
+
+h3 {
+    font-size:1.3em;
+    font-weight:100;
+    font-style:normal;
+    color:#FEFFEF;
+    margin:0;
+}
+
+em {
+    color: #6BD253;
+}
+
+.css, .sequential, .animations {
+line-height:0.8em;
+
+}
+
+
+.css {
+    font-family:georgia;
+    font-weight:400;
+    font-size:9em;
+    display:inline;
+    color:PALEVIOLETRED;
+}
+
+.sequential {
+    left:-100px;
+    font-family: helvetica;
+    font-style:italic;
+     font-size:9em;
+     font-weight:700;
+     color: #8DFF0C;
+}
+
+.animations {
+    font-family: georgia;
+    font-style:normal;
+    color: #CC1E4C;
+     font-size:6em;
+}
+
+
+.sep {
+    background-color:white;
+    height:2px;
+    width:20%;
+    margin:1.5em auto;
+
+
+}
+
+
+
+// =========== ANIMATIONS =========== 
+
+
+@keyframes fadein { 
+    from { opacity: 0; } 
+    to {opacity:1;}
+}
+
+
+@keyframes drawwidth {
+    from {width:0%;}
+    to {width:20%;}
+
+}
+
+
+@keyframes slideleft {
+    from {margin-left:-9999px;}
+    to {margin-left:0px;}
+}
+
+// @keyframes slideright {
+//     from {margin-right:-9999px;}
+//     to {margin-right:0px;}
+// }
+
+
+// ========= ANIMATION CLASSES ============= 
+
+
+.drawwidth {
+     animation: drawwidth 1s ease-in 1;
+}
+
+.slideleft {
+    animation: slideleft 1s ease-in-out 1;
+}
+
+
+.slideright {
+   animation: slideright 1s ease-in-out 1;
+ }
+
+.fadein {
+    animation: fadein 1s ease-in-out 1;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+
+
+
+
+// =============== ball animations =============
+
+@keyframes firstarch {
+    from {transform: rotate(-25deg); transform-origin: bottom right;    }
+    to {transform: rotate(75deg);  transform-origin: bottom right; }
+    // 100% {transform: rotate(70deg)translateY(-200px); }
+      
+}
+
+ @keyframes secondarch {
+    from { transform: rotate(75deg) translateX(0px) translateY(0px);  transform-origin: bottom right;    }
+     to {  transform: rotate(160deg) translateX(-460px) translateY(-420px); transform-origin: top right;  }
+ }
+
+ @keyframes thirdarch {
+    from {  transform: rotate(160deg) translateX(-460px) translateY(-420px); transform-origin: top right;  }
+    to { transform: rotate(200deg) translateX(-900px) translateY(70px); transform-origin: top left; }
+ }
+
+ @keyframes fourtharch {
+    from {transform: rotate(200deg) translateX(-900px) translateY(70px); transform-origin: top left;}
+    to{transform: rotate(230deg) translateX(-675px) translateY(1100px); transform-origin: bottom left;}
+ }
+
+
+
+.firstarch {animation: firstarch 2s cubic-bezier(.74,.01,.99,.72) 1;}
+ .secondarch {animation: secondarch 1s cubic-bezier(0,.62,1,.46) 1;}
+.thirdarch {animation: thirdarch 0.8s cubic-bezier(0,.62,1,.46) 1;}
+.fourtharch {animation: fourtharch 0.8s cubic-bezier(0,.62,1,.46) 1; }
+
+
+
+/* ball */
+
+
+
+#container {
+    width:100%;
+    height:80%;
+    
+}
+
+#ground {
+    height:5px;
+    background-color:darkmagenta; 
+    width:100%;
+    position:absolute;
+    top:430px;
+}
+
+#ball-container {
+    margin-top:200px;
+    transform: rotate(230deg) translateX(-675px) translateY(1100px); 
+    transform-origin: bottom left;
+    width:50px;
+    height:300px;
+    border:1px dashed gray;
+    // margin-left:-20px;
+}
+
+#ball {
+    width:50px;
+    height:50px;
+    background-color: slateblue;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    border-radius: 50px;
+    box-shadow: inset 5px -5px 40px 0px rgba(0,0,0,0.80); 
+    
+   
+    
+
+}
+
+
