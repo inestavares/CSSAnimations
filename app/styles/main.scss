@@ -12,7 +12,7 @@
     }
 }
 
-// =========== MAIN CSS =========== 
+// =========== MAIN CSS ===========
 
 body, html {
     width:100%;
@@ -44,7 +44,7 @@ body, html {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family:baskerville, serif;  
+  font-family:baskerville, serif;
 }
 
 
@@ -55,7 +55,7 @@ h4 {
     font-style: italic;
     color:#FEFFEF;
     margin:0;
-    
+
 }
 
 h3 {
@@ -110,13 +110,10 @@ line-height:0.8em;
 
 }
 
+// =========== ANIMATIONS ===========
 
-
-// =========== ANIMATIONS =========== 
-
-
-@keyframes fadein { 
-    from { opacity: 0; } 
+@keyframes fadein {
+    from { opacity: 0; }
     to {opacity:1;}
 }
 
@@ -139,7 +136,7 @@ line-height:0.8em;
 // }
 
 
-// ========= ANIMATION CLASSES ============= 
+// ========= ANIMATION CLASSES =============
 
 
 .drawwidth {
@@ -163,72 +160,70 @@ line-height:0.8em;
     visibility: hidden;
 }
 
-
-
-
-
 // =============== ball animations =============
 
-@keyframes firstarch {
-    from {transform: rotate(-25deg); transform-origin: bottom right;    }
-    to {transform: rotate(75deg);  transform-origin: bottom right; }
-    // 100% {transform: rotate(70deg)translateY(-200px); }
-      
+@keyframes horizontal-motion {
+    from {  }
+    to { transform: translateX(800px); }
 }
 
- @keyframes secondarch {
-    from { transform: rotate(75deg) translateX(0px) translateY(0px);  transform-origin: bottom right;    }
-     to {  transform: rotate(160deg) translateX(-460px) translateY(-420px); transform-origin: top right;  }
- }
+@keyframes spin {
+    from {  }
+    to { transform: rotate(calc(360deg * (800 / (50 * 3.14159)))); } //
+}
 
- @keyframes thirdarch {
-    from {  transform: rotate(160deg) translateX(-460px) translateY(-420px); transform-origin: top right;  }
-    to { transform: rotate(200deg) translateX(-900px) translateY(70px); transform-origin: top left; }
- }
+// Heights and timings have been calculated off-screen to match real-world
+// physics for a reasonably bouncy (90%) ball.
 
- @keyframes fourtharch {
-    from {transform: rotate(200deg) translateX(-900px) translateY(70px); transform-origin: top left;}
-    to{transform: rotate(230deg) translateX(-675px) translateY(1100px); transform-origin: bottom left;}
- }
+@keyframes firstbounce {
+    from {  }
+    to { margin-top: 0px }
+}
 
+@keyframes secondbounce {
+    from {  }
+    to { margin-top: 25px }
+}
 
+@keyframes thirdbounce {
+    from {  }
+    to { margin-top: 47.5px }
+}
 
-.firstarch {animation: firstarch 2s cubic-bezier(.74,.01,.99,.72) 1;}
- .secondarch {animation: secondarch 1s cubic-bezier(0,.62,1,.46) 1;}
-.thirdarch {animation: thirdarch 0.8s cubic-bezier(0,.62,1,.46) 1;}
-.fourtharch {animation: fourtharch 0.8s cubic-bezier(0,.62,1,.46) 1; }
+@keyframes fourthbounce {
+    from {  }
+    to { margin-top: 67.75px }
+}
 
-
+.firstbounce { animation: spin 5s linear, firstbounce .725s 2 ease-out alternate; }
+.secondbounce { animation: spin 5s linear, secondbounce .65s 2 ease-out alternate; }
+.thirdbounce { animation: spin 5s linear, thirdbounce .59s 2 ease-out alternate; }
+.fourthbounce { animation: spin 5s linear, fourthbounce .53s 2 ease-out alternate; }
 
 /* ball */
-
-
-
 #container {
     width:100%;
     height:80%;
-    
 }
 
 #ground {
     height:5px;
-    background-color:darkmagenta; 
+    background-color:darkmagenta;
     width:100%;
     position:absolute;
-    top:430px;
+    top:500px;
 }
 
 #ball-container {
-    margin-top:200px;
-    transform: rotate(230deg) translateX(-675px) translateY(1100px); 
-    transform-origin: bottom left;
+    margin-top:190px;
     width:50px;
     height:300px;
     border:1px dashed gray;
-    // margin-left:-20px;
+    animation: horizontal-motion 5s linear;
 }
 
 #ball {
+    margin-top: 250px;
     width:50px;
     height:50px;
     background-color: slateblue;
@@ -237,11 +232,5 @@ line-height:0.8em;
     -ms-border-radius: 50px;
     -o-border-radius: 50px;
     border-radius: 50px;
-    box-shadow: inset 5px -5px 40px 0px rgba(0,0,0,0.80); 
-    
-   
-    
-
+    box-shadow: inset 5px -5px 40px 0px rgba(0,0,0,0.80);
 }
-
-
